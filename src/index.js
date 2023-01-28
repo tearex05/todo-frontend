@@ -15,9 +15,9 @@ root.render(
     <Nav />
         <Routes>
             <Route path='/todo-frontend' exact element={<App />} />
-            <Route path='/signup' exact element={<Signup />} />
-            <Route path='/login' exact element={<Login />} />
-            <Route path='/todo/:id' element={<TodoDetail />} />
+            <Route path='/todo-frontend/signup' exact element={<Signup />} />
+            <Route path='/todo-frontend/login' exact element={<Login />} />
+            <Route path='/todo-frontend/todo/:id' element={<TodoDetail />} />
         </Routes>
     </R>
     </>
