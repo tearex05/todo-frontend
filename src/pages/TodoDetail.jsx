@@ -42,7 +42,6 @@ function TodoDetail() {
 			setMore({...more, editing: 'false'})
 		}
 	}
-	console.log(more.editing)
 	return (
 		<div className="todo-detail">
 			{more.editing === 'true' ? (
