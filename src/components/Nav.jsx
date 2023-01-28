@@ -7,12 +7,12 @@ function Nav() {
 	const user = localStorage.getItem('user')
 	const onLogout = () => {
 		localStorage.removeItem('user')
-		navigate('/')
+		navigate('/todo-frontend')
 	}
 	return (
 		<>
 			<div className="nav">
-				<Link to="/">
+				<Link to="/todo-frontend">
 					<HiHome color="white" size="2em" />
 				</Link>
 				<div className="account-things">

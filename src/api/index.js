@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const url = 'todos'
-const url2 = 'auth/'
+const url = 'https://todo-backend-odoa.onrender.com/todos'
+const url2 = 'https://todo-backend-odoa.onrender.com/auth/'
 
 export const getTodos = async () => await axios.get(url)
 export const createTodo = async (data) => await axios.post(url, data)

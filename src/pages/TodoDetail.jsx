@@ -22,11 +22,11 @@ function TodoDetail() {
 	const submitHandler = () => {
 		updateTodo(id, {"title": more.todoEdit})
 		setMore({...more, editing: false})
-		navigate('/')
+		navigate('/todo-frontend')
 	}
 	const Delete = async () => {
 		await deleteTodo(id)
-		navigate('/')
+		navigate('/todo-frontend')
 	}
 	return (
 		<div className="todo-detail">

@@ -24,7 +24,7 @@ function Login() {
 			.then(res => {
 				localStorage.setItem('user', res.data)
 				setError('')
-				navigate('/')
+				navigate('/todo-frontend')
 			})
 			.catch(error => setError(error.response.data))
 		}
