@@ -1,0 +1,255 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body{
+  background-image: url('./assets/bg.jpg');
+  backdrop-filter: blur(5px);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+  font-family: 'Sofia Sans', sans-serif;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+}
+
+input{
+}
+
+.link{
+  color: #0089ff;
+  transition: all 0.3s ease;
+}
+
+.link:hover{
+  text-decoration: underline;
+}
+
+.margin{
+  margin-top: 15px;
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: absolute;
+  width: 100vw;
+  z-index: 2;
+}
+
+.account-things{
+  display: flex;
+  font-size: 1.3rem;
+  margin-right: 10px;
+}
+
+.line{
+  margin: 0 10px;
+}
+
+.container-not{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.form1{
+  display: flex;
+  align-items: center;
+  margin-top: 150px;
+}
+
+.input{
+  border: none;
+  border-bottom: 3px solid whitesmoke;
+  outline: none;
+  font-size: 1.5rem;
+  padding: 5px 5px;
+  width: 50vw;
+  max-width: 400px;
+  transition: all 0.3s ease-out;
+  background-color: transparent;
+}
+
+.input::placeholder{
+  color: #e3e3e3;
+}
+
+.input:focus{
+  width: 60vw;
+  border-bottom: 2px solid #0089ff;
+}
+
+.input-edit{
+  margin-bottom: 10px;
+  font-size: 1.7rem;
+}
+
+.todos{
+  margin-top: 30px;
+}
+
+.todo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60vw;
+  max-width: 400px;
+  padding: 5px 15px;
+  margin: 20px 0;
+  backdrop-filter: blur(20px);
+}
+
+.title{
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.btns{
+  width: 30vw;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.btn{
+  font-size: 1.5rem;
+  border: 2px solid white;
+  padding: 6px 10px;
+  border-radius: 20px;
+  margin: 0 10px;
+  transition: all 0.2s ease-in;
+}
+
+.btn:hover{
+  background-color: white;
+  color: black;
+  border-radius: 0;
+}
+
+button{
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.todo-detail{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 0 20px;
+}
+
+
+
+@media (min-width: 400px){
+  .todo-title{
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 600px){
+  .todo-title{
+    font-size: 5rem;
+}
+}
+
+.date{
+  font-size: 1.1rem;
+}
+
+.signup-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.signup-body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-signup{
+  margin: 10px 0;
+}
+
+.signup-title{
+  font-size: 3rem;
+}
+
+.signup-btn{
+  margin-top: 30px;
+}
+
+.logout{
+  font-size: 20.8px;
+}
+
+.login-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.login-body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-login{
+  margin: 10px 0;
+}
+
+.login-title{
+  font-size: 3rem;
+}
+
+.login-btn{
+  margin-top: 30px;
+}
+
+.error{
+  color: red;
+  font-size: 1.4rem;
+  width: 60vw;
+  text-align: center;
+  margin-top: 10px;
+}
