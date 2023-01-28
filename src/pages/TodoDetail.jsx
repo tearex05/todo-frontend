@@ -12,6 +12,7 @@ function TodoDetail() {
 		editing: false,
 		todoEdit: todo.title
 	})
+	const [error, setError] = useState('')
 	useEffect(() => {
 		getTodo(id)
 		.then(res => {
@@ -20,9 +21,14 @@ function TodoDetail() {
 		})
 	}, [id, more])
 	const submitHandler = () => {
-		updateTodo(id, {"title": more.todoEdit})
-		setMore({...more, editing: false})
-		navigate('/todo-frontend')
+		if(!more.todoEdit){
+			setError("Plz Fill The Input")
+		} else {
+			updateTodo(id, {"title": more.todoEdit})
+			setMore({...more, editing: false})
+			navigate('/todo-frontend')
+			setError('')
+		}
 	}
 	const Delete = async () => {
 		await deleteTodo(id)
@@ -31,10 +37,13 @@ function TodoDetail() {
 	return (
 		<div className="todo-detail">
 			{more.editing ? (
-				<form onSubmit={submitHandler} className="editing">
-					<input className='input input-edit' type="text" value={more.todoEdit} onChange={(e) => setMore({...more, todoEdit: e.target.value})} />
-					<button className="btn">Edit</button>
-				</form>
+				<>
+					<form onSubmit={submitHandler} className="editing">
+						<input className='input input-edit' type="text" value={more.todoEdit} onChange={(e) => setMore({...more, todoEdit: e.target.value})} />
+						<button type='submit' className="btn">Edit</button>
+					</form>
+					<p className="input-error">{error}</p>
+				</>
 				) : (
 				<h1 className="todo-title">
 					{todo.title}

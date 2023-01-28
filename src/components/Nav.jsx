@@ -22,9 +22,9 @@ function Nav() {
 						</div>
 					) : (
 						<div className="account-things">
-							<Link to="/signup">Signup</Link>
+							<Link to="/todo-frontend/signup">Signup</Link>
 							<p className="line"> | </p>
-							<Link to="/login">Login</Link>
+							<Link to="/todo-frontend/login">Login</Link>
 						</div>
 					)}
 				</div>
