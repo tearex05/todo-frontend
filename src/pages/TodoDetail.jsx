@@ -9,7 +9,7 @@ function TodoDetail() {
 	const navigate = useNavigate()
 	const [todo, setTodo] = useState({})
 	const [more, setMore] = useState({
-		editing: false,
+		editing: 'false',
 		todoEdit: todo.title
 	})
 	const [error, setError] = useState('')
@@ -20,7 +20,8 @@ function TodoDetail() {
 			setMore({...more, todoEdit: res.data.title})
 		})
 	}, [id, more])
-	const submitHandler = () => {
+	const submitHandler = (e) => {
+		e.preventDefault()
 		if(!more.todoEdit){
 			setError("Plz Fill The Input")
 		} else {
@@ -34,9 +35,17 @@ function TodoDetail() {
 		await deleteTodo(id)
 		navigate('/todo-frontend')
 	}
+	const handleEditing = () => {
+		if(more.editing === 'false'){
+			setMore({...more, editing: 'true'})
+		} else {
+			setMore({...more, editing: 'false'})
+		}
+	}
+	console.log(more.editing)
 	return (
 		<div className="todo-detail">
-			{more.editing ? (
+			{more.editing === 'true' ? (
 				<>
 					<form onSubmit={submitHandler} className="editing">
 						<input className='input input-edit' type="text" value={more.todoEdit} onChange={(e) => setMore({...more, todoEdit: e.target.value})} />
@@ -51,7 +60,7 @@ function TodoDetail() {
 				)}
 			<p className="date">{moment(todo.createdAt).fromNow()}</p>
 			<div className="btns">
-				<button onClick={() => setMore({...more, editing: true})} className="edit">
+				<button onClick={handleEditing} className="edit">
 					<BiPencil size="3.5em" color="white" />
 				</button>
 				<button onClick={Delete} className="delete">
