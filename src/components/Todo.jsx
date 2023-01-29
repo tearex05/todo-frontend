@@ -6,16 +6,16 @@ function Todo({todo}) {
 	return (
 		<div className="todo">
 			{todo.title.length > 8 ? (
-				<p className="title">
+				<p className="title title2">
 					{todo.title.slice(0,8)}...
 				</p>
 				) : (
-				<p className="title">
+				<p className="title title2">
 					{todo.title}
 				</p>
 			)}
 				<Link to={`todo/${todo._id}`}>
-					<FiMoreHorizontal size='3.5em' />
+					<FiMoreHorizontal className='more-icon' />
 				</Link>
 		</div>
 	)

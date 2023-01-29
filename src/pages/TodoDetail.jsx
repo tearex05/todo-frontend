@@ -19,7 +19,7 @@ function TodoDetail() {
 			setTodo(res.data);
 			setMore({ ...more, todoEdit: res.data.title });
 		});
-	}, [id, more]);
+	}, [id]);
 	const submitHandler = (e) => {
 		e.preventDefault();
 		if (!more.todoEdit) {
@@ -42,6 +42,7 @@ function TodoDetail() {
 			setMore({ ...more, editing: "false" });
 		}
 	};
+	console.log(more.editing)
 	if (!user) {
 		return (
 			<div className="container-not">
